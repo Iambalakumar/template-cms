@@ -1,1 +1,1 @@
- BACKEND FOR tmeplate-cms
+ BACKEND FOR template-cms
