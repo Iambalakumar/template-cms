@@ -20,11 +20,11 @@ const templateSchema = new mongoose.Schema({
   downloadLink: {
      type: String, 
      required: true 
-  },
-  LanguageUsed: {
-      type: [String],
-      required: true
   }
+  // LanguageUsed: {
+  //     type: [String],
+  //     required: true
+  // }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Template', templateSchema);

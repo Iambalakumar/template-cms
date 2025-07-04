@@ -1,12 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Templates from './components/templates';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-center my-8 font-bold">Template Gallery</h1>
-      <Templates />
-    </div>
+    <Router>
+      <nav className="navbar">
+        <Link to="/">Templates</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Signup</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Templates />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 
