@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signup } from '../sevices/authService';
+import { signup } from '../services/authService';
 
 const Signup = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '', role: 'user' });
@@ -29,10 +29,13 @@ const Signup = () => {
         <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
-        <select name="role" value={form.role} onChange={handleChange}>
+        <select name="role" value={form.role} placeholder="Role" onChange={handleChange}>
           <option value="user">User</option>
-          <option value="admin">Admin</option>
+          <option value="creator">creator</option>
         </select>
+        <p>
+          Already have an account? <span onClick={() => window.location.href = '/login'}>Login here</span>
+        </p>
         <button type="submit">Signup</button>
       </form>
     </div>

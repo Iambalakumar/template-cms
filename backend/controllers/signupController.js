@@ -6,7 +6,11 @@ exports.signup = async (req, res) => {
   try {
 
     console.log(req.body);
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role1 } = req.body;
+    
+    if(role1==='creator'){
+      var role="admin";
+    }
 
     if (!name || !email || !password) {
       return res.status(400).json({ message: 'Name, email, and password are required' });
